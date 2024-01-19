@@ -54,11 +54,22 @@ class Note {
     constructor() {
         this.loadNotes();
         this.displayLastSaveTime();
-        setInterval(() => this.saveNotesToLocalStorage(), 2000);
+        if (getCurrentFileName() === 'writer.html') {
+
+            setInterval(() => this.saveNotesToLocalStorage(), 2000);}
+
+        else{
+
+            setInterval(() => this.loadNotes(), 2000);
+        
+        }
     }
 
     loadNotes() {
         this.savedNotes = JSON.parse(localStorage.getItem('notes'));
+        if (getCurrentFileName() === 'reader.html') {
+            this.displayLastUpdateTime();
+        }
         this.renderNotes();
     }
 
@@ -70,6 +81,8 @@ class Note {
         this.savedNotes.forEach((note, index) => {
             this.ui.createNoteElement(note, index);
         });
+
+
     }
 
     addNote() {
@@ -99,6 +112,10 @@ class Note {
         if (lastSaveTime) {
             storeTimeElement.innerText = lastSaveTime;
         }
+    }
+    displayLastUpdateTime() {
+        const storeTimeElement = document.getElementById('last-save-time');
+        storeTimeElement.innerText = new Date().toLocaleTimeString();
     }
 }
 
