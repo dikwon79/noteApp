@@ -1,0 +1,55 @@
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  
+}
+#save{
+  display: flex;
+}
+#save button{
+  width: 70px;
+  height: 30px;
+  position: relative;
+  left: -179px;
+  
+}
+#storeTime {
+  top: 10px;
+  right: 550px;
+  position: fixed;
+  font-size: 20px;
+}
+
+button{
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+}
+
+#contents{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 100px; /* Adjust this value as needed */
+ 
+}
+.pair{
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+textarea{
+  width : 300px;
+  height: 100px;
+}
+.pair button{
+  width: 100px;
+  height: 40px;
+  justify-content: center;
+  align-self: center;
+  
+}
