@@ -84,15 +84,18 @@ class Note {
 
 
     }
+    
 
     addNote() {
         this.savedNotes.push({ content: '' });
         this.saveNotesToLocalStorage();
+        this.renderNotes();
     }
 
     removeNoteElement(index) {
         this.savedNotes.splice(index, 1);
         this.saveNotesToLocalStorage();
+        this.renderNotes();
     }
 
     updateNoteContent(index, content) {
@@ -103,7 +106,6 @@ class Note {
         localStorage.setItem('notes', JSON.stringify(this.savedNotes));
         localStorage.setItem('lastSaveTime', new Date().toLocaleTimeString());
         this.displayLastSaveTime();
-        this.renderNotes();
     }
 
     displayLastSaveTime() {

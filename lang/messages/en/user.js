@@ -1,12 +1,11 @@
 //string messages
 const messages = {
     error: {
-      correctOrder: 'Correct orders',
-      incorrectOrder: 'Wrong orders!',
-      excellent: 'Excellent memory!',
-      condition: 'input error(3~7)',
+      correctOrder: 'Correct error',
+      incorrectOrder: 'Wrong error!',
+      condition: 'condition error',
     },
-    gameover: "Game Over",
+    save: "save completed",
 };
 
   
