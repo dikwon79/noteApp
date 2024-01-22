@@ -1,3 +1,4 @@
+//I used chatgpt to write the codes partly.
 class Button {
     constructor(label, clickHandler) {
         this.element = document.createElement('button');
@@ -66,7 +67,12 @@ class Note {
     }
 
     loadNotes() {
-        this.savedNotes = JSON.parse(localStorage.getItem('notes'));
+        const storedNotes = localStorage.getItem('notes');
+        if (storedNotes !== null) {
+            this.savedNotes = JSON.parse(storedNotes);
+        } else {
+            this.savedNotes = [];
+        }
         if (getCurrentFileName() === 'reader.html') {
             this.displayLastUpdateTime();
         }
