@@ -39,11 +39,9 @@ class Form {
 
         const textarea = new Textarea(note.content, (event) => this.note.updateNoteContent(index, event.target.value));
         const removeButton = new Button('Remove', () => this.note.removeNoteElement(index));
-
         noteElement.appendChild(textarea.getElement());
 
         if (getCurrentFileName() === 'writer.html') {
-            const removeButton = new Button('Remove', () => this.note.removeNoteElement(index));
             noteElement.appendChild(removeButton.getElement());
         }
         
@@ -65,7 +63,7 @@ class Note {
         
         }
     }
-
+    
     loadNotes() {
         const storedNotes = localStorage.getItem('notes');
         if (storedNotes !== null) {
